@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useMemo } from "react";
 import {
   Menu, X, ChevronRight, ChevronLeft, MapPin, Clock, Phone, DollarSign,
