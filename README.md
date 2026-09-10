@@ -1,4 +1,4 @@
-# MENTE
+# SINAPSIS
 
 Prototipo académico de orientación, educación y búsqueda de ayuda en salud mental.
 

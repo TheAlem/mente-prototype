@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   Menu, X, ArrowLeft, ArrowRight, ChevronRight, Check, Plus, Trash2, Pencil,
-  Save, AlertTriangle, ShieldAlert, Phone, LifeBuoy, Heart, Brain, BookOpen,
+  Save, AlertTriangle, ShieldAlert, Phone, LifeBuoy, Brain, BookOpen,
   Wrench, MapPin, DollarSign, Lock, FileText, Wind, Sparkles, Moon,
   MessageCircle, Activity, ClipboardList, Settings, Search, Stethoscope,
   HandHeart, Home as HomeIcon, Info, Loader2, Users, GraduationCap, Building2,
 } from "lucide-react";
 
 /* =========================================================================
-   MENTE — plataforma de orientación y educación en salud mental
+   SINAPSIS — plataforma de orientación y educación en salud mental
    Prototipo funcional. Ver notas "ADMIN:" para saber dónde cargar datos
    reales (profesionales, servicios, números de emergencia) antes de
    publicar. Todo el contenido educativo debe ser revisado por un
@@ -1001,7 +1001,7 @@ function NavBar({ page, navigate }) {
     <header className="sticky top-0 z-40" style={{ backgroundColor: `${C.bg}F2`, backdropFilter: "blur(6px)", borderBottom: `1px solid ${C.border}` }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <button className="font-display text-xl font-semibold mente-focus rounded-lg" style={{ color: C.primary }} onClick={() => navigate("home")}>
-          MENTE
+          SINAPSIS
         </button>
         <nav className="hidden md:flex items-center gap-1">
           {NAV_ITEMS.map((item) => (
@@ -1074,7 +1074,7 @@ function Footer({ navigate }) {
     <footer className="mt-20" style={{ borderTop: `1px solid ${C.border}` }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid sm:grid-cols-3 gap-8">
         <div>
-          <p className="font-display text-lg font-semibold" style={{ color: C.primary }}>MENTE</p>
+          <p className="font-display text-lg font-semibold" style={{ color: C.primary }}>SINAPSIS</p>
           <p className="font-body text-sm mt-2" style={{ color: C.inkSoft }}>
             Entender lo que sientes es el primer paso para pedir ayuda.
           </p>
@@ -1085,7 +1085,7 @@ function Footer({ navigate }) {
           <button className="text-left mente-focus rounded" onClick={() => navigate("admin")}>Panel de administración</button>
         </div>
         <div className="font-body text-sm" style={{ color: C.inkFaint }}>
-          MENTE no realiza diagnósticos médicos. Las evaluaciones son herramientas orientativas y no sustituyen la valoración de un profesional de salud.
+          SINAPSIS no realiza diagnósticos médicos. Las evaluaciones son herramientas orientativas y no sustituyen la valoración de un profesional de salud.
         </div>
       </div>
     </footer>
@@ -1100,7 +1100,7 @@ function BreathingGlyph() {
       <div className="absolute inset-8 rounded-full pulse-slow" style={{ backgroundColor: C.sageSoft, animationDelay: "0.6s" }} />
       <div className="absolute inset-16 rounded-full pulse-slow" style={{ backgroundColor: C.accentSoft, animationDelay: "1.2s" }} />
       <div className="absolute inset-0 flex items-center justify-center">
-        <Heart size={36} color={C.primary} />
+        <Brain size={58} strokeWidth={2.2} color={C.primary} />
       </div>
     </div>
   );
@@ -1122,7 +1122,7 @@ function HomePage({ navigate }) {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <p className="font-display text-4xl sm:text-5xl font-semibold leading-tight" style={{ color: C.primary }}>MENTE</p>
+          <p className="font-display text-4xl sm:text-5xl font-semibold leading-tight" style={{ color: C.primary }}>SINAPSIS</p>
           <p className="font-display text-xl sm:text-2xl mt-4" style={{ color: C.ink }}>
             "Entender lo que sientes es el primer paso para pedir ayuda."
           </p>
@@ -1148,7 +1148,7 @@ function HomePage({ navigate }) {
 
       <div className="mt-6">
         <DisclaimerBox tone="primary">
-          MENTE no realiza diagnósticos médicos. Las evaluaciones disponibles son herramientas de orientación y no sustituyen la valoración de un profesional.
+          SINAPSIS no realiza diagnósticos médicos. Las evaluaciones disponibles son herramientas de orientación y no sustituyen la valoración de un profesional.
         </DisclaimerBox>
       </div>
 
@@ -1765,7 +1765,7 @@ function DirectoryPage({ navigate }) {
             <p className="font-body text-sm font-medium" style={{ color: C.primary }}>{p.profession} · {p.specialty}</p>
             <p className="font-body text-xs flex items-center gap-1" style={{ color: C.inkFaint }}><MapPin size={13} /> {p.address ? `${p.address}, ` : ""}{p.city}</p>
             <p className="font-body text-xs flex items-center gap-1" style={{ color: C.inkFaint }}><DollarSign size={13} /> {p.cost} · {p.price}</p>
-              <p className="font-body text-sm" style={{ color: C.inkSoft }}>{p.description?.replaceAll("Synapsis", "MENTE")}</p>
+              <p className="font-body text-sm" style={{ color: C.inkSoft }}>{p.description?.replaceAll("Synapsis", "SINAPSIS")}</p>
             <div className="mt-2 flex gap-2 flex-wrap">
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((p.name + " " + (p.address || "") + " " + p.city + " Bolivia").trim())}`}
@@ -1775,7 +1775,6 @@ function DirectoryPage({ navigate }) {
               >
                 <MapPin size={15} /> Ver ubicación
               </a>
-              <GhostButton onClick={() => alert(p.contact?.replaceAll("Synapsis", "MENTE"))}>Contactar</GhostButton>
             </div>
           </Card>
         ))}
@@ -1786,7 +1785,7 @@ function DirectoryPage({ navigate }) {
 
       <div className="mt-8">
         <DisclaimerBox tone="primary">
-          Los perfiles marcados "Google Maps" fueron encontrados en una búsqueda pública en Google Maps. Son negocios reales, pero MENTE todavía no ha confirmado directamente sus datos de contacto, modalidad, costo ni licencia — por eso no tienen el sello "✓ Verificado". Los marcados "EJEMPLO" son datos de muestra ficticios. Para confirmar la matrícula de un psicólogo en Bolivia, el Colegio de Psicólogos de Santa Cruz es un buen punto de partida.
+          Los perfiles marcados "Google Maps" fueron encontrados en una búsqueda pública en Google Maps. Son negocios reales, pero SINAPSIS todavía no ha confirmado directamente sus datos de contacto, modalidad, costo ni licencia — por eso no tienen el sello "✓ Verificado". Los marcados "EJEMPLO" son datos de muestra ficticios. Para confirmar la matrícula de un psicólogo en Bolivia, el Colegio de Psicólogos de Santa Cruz es un buen punto de partida.
         </DisclaimerBox>
       </div>
       <div className="mt-4">
@@ -1873,7 +1872,7 @@ function UrgentHelpPage({ navigate }) {
       </div>
 
       <DisclaimerBox tone="gold">
-        El 168 (emergencias en salud) y el 110 (Policía) son números oficiales publicados por el Ministerio de Salud de Bolivia. La línea "Familia Segura" es un programa de UNICEF Bolivia, respaldado por comunicados oficiales, que atiende específicamente ideas o intentos de suicidio. Los hospitales y centros de salud fueron encontrados en directorios y sitios públicos sobre Santa Cruz. Ninguno de estos números ha sido llamado ni confirmado directamente por el equipo de MENTE — confírmenlos antes de publicar la plataforma.
+        El 168 (emergencias en salud) y el 110 (Policía) son números oficiales publicados por el Ministerio de Salud de Bolivia. La línea "Familia Segura" es un programa de UNICEF Bolivia, respaldado por comunicados oficiales, que atiende específicamente ideas o intentos de suicidio. Los hospitales y centros de salud fueron encontrados en directorios y sitios públicos sobre Santa Cruz. Ninguno de estos números ha sido llamado ni confirmado directamente por el equipo de SINAPSIS — confírmenlos antes de publicar la plataforma.
       </DisclaimerBox>
 
       <div className="mt-6 grid sm:grid-cols-2 gap-3">
@@ -1888,10 +1887,10 @@ function UrgentHelpPage({ navigate }) {
 function PrivacyPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
-      <PageHeader eyebrow="Privacidad" title="Tu privacidad en MENTE" />
+      <PageHeader eyebrow="Privacidad" title="Tu privacidad en SINAPSIS" />
       <div className="flex flex-col gap-4">
         <Card>
-          <p className="font-body text-sm" style={{ color: C.inkSoft }}>MENTE solicita únicamente los datos necesarios para orientarte: edad, ubicación general y, opcionalmente, algunas preguntas de contexto.</p>
+          <p className="font-body text-sm" style={{ color: C.inkSoft }}>SINAPSIS solicita únicamente los datos necesarios para orientarte: edad, ubicación general y, opcionalmente, algunas preguntas de contexto.</p>
         </Card>
         <Card>
           <p className="font-body text-sm" style={{ color: C.inkSoft }}>Las respuestas a las preguntas de seguridad y a los cuestionarios (PHQ-9, GAD-7) no se almacenan de forma persistente en este prototipo: existen solo mientras usas la evaluación.</p>
@@ -1910,7 +1909,7 @@ function SourcesPage() {
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
       <PageHeader eyebrow="Evidencia" title="Fuentes y evidencia" />
       <Card className="flex flex-col gap-3">
-        <p className="font-body text-sm" style={{ color: C.inkSoft }}>El contenido de MENTE busca priorizar fuentes como:</p>
+        <p className="font-body text-sm" style={{ color: C.inkSoft }}>El contenido de SINAPSIS busca priorizar fuentes como:</p>
         <ul className="font-body text-sm space-y-1.5" style={{ color: C.inkSoft }}>
           <li>• Organización Mundial de la Salud (OMS)</li>
           <li>• Organismos sanitarios oficiales</li>
