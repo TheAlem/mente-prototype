@@ -859,7 +859,7 @@ function EducationPage() {
             className="mente-focus flex items-start gap-3 rounded-2xl border p-5 text-left"
             style={{ borderColor: C.border, background: C.card }}
           >
-            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full" style={{ background: C.primarySoft }}>
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full" style={{ background: C.primarySoft }}>
               <a.Icon size={18} style={{ color: C.primary }} />
             </span>
             <span>
